@@ -1,0 +1,36 @@
+
+# Errors
+msgid = "Missing JSON in request"
+msgstr = "Missing JSON in request"
+
+msgid = "Provided authentication data is invalid"
+msgstr = "Provided authentication data is invalid"
+
+
+# User
+msgid = "User not found"
+msgstr = "User not found"
+
+msgid = "User created successfully"
+msgstr = "User created successfully"
+
+
+# Auth
+msgid = "Logged out"
+msgstr = "Logged out"
+
+msgid = "Successfully logged out"
+msgstr = "Successfully logged out"
+
+msgid = "Logged in"
+msgstr = "Logged in"
+
+msgid = "Successfully logged in"
+msgstr = "Successfully logged in"
+
+msgid = "You are not logged in!"
+msgstr = "You are not logged in!"
+
+# Common
+msgid = "Something went wrong"
+msgstr = "Something went wrong"
