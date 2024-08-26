@@ -14,7 +14,14 @@ from app.blueprints.user.model.users import User, user_list
 
 class Register(Resource):
     def post(self):
+        if not request.is_json:
+            return make_json_response({'message': 'Missing JSON in request'}, HTTPStatus.BAD_REQUEST)
+
         data = request.get_json()
+        required_data = {"password", "username", "email"}
+        if not all(key in data for key in required_data):
+            return make_json_response({'message': 'Missing data in request'}, HTTPStatus.BAD_REQUEST)
+
         hashed_password = data['password']
         hashed_password = generate_password_hash(
             data['password'], method='pbkdf2')
@@ -30,7 +37,8 @@ class Login(Resource):
             return make_json_response({'message': 'Missing JSON in request'}, HTTPStatus.BAD_REQUEST)
 
         data = request.get_json()
-        if not all(key in data for key in ['email', 'password']):
+        required_data = {"password", "email"}
+        if not all(key in data for key in required_data):
             return make_json_response({'message': 'Missing data in request'}, HTTPStatus.BAD_REQUEST)
 
         user = User.get_by_email(data['email'])
