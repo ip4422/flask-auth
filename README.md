@@ -11,3 +11,10 @@ pip install -r requirements.txt
 ```bash
 flask --app app.flask_app run
 ```
+
+## Running app in debug mode
+
+```bash
+export FLASK_DEBUG=1
+flask --app app.flask_app run
+```
