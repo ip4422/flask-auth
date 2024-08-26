@@ -1,24 +1,26 @@
 from enum import StrEnum
 from flask import jsonify, make_response
+from i18n import _
 
 
 class ResponseMessage(StrEnum):
-    INVALID_REQUEST_JSON_BODY = "Missing JSON in request"
-    INVALID_AUTH_REQUEST = "Provided authentication data is invalid"
+    # Errors
+    INVALID_REQUEST_JSON_BODY = _("Missing JSON in request")
+    INVALID_AUTH_REQUEST = _("Provided authentication data is invalid")
 
     # User
-    USER_NOT_FOUND = "User not found"
-    USER_CREATED = "User created successfully"
+    USER_NOT_FOUND = _("User not found")
+    USER_CREATED = _("User created successfully")
 
     # Auth
-    LOGGED_OUT = "Logged out"
-    SUCCESSFULLY_LOGGED_OUT = "Successfully logged out"
-    LOGGED_IN = "Logged in"
-    SUCCESSFULLY_LOGGED_IN = "Successfully logged in"
-    NOT_LOGGED_IN = "You are not logged in!"
+    LOGGED_OUT = _("Logged out")
+    SUCCESSFULLY_LOGGED_OUT = _("Successfully logged out")
+    LOGGED_IN = _("Logged in")
+    SUCCESSFULLY_LOGGED_IN = _("Successfully logged in")
+    NOT_LOGGED_IN = _("You are not logged in!")
 
     # Common
-    SOMETHING_WENT_WRONG = "Something went wrong"
+    SOMETHING_WENT_WRONG = _("Something went wrong")
 
 
 def make_json_response(data, status, headers=None):
