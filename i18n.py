@@ -7,6 +7,9 @@ from typing import Callable
 DEFAULT_LANGUAGE = 'en'
 MESSAGES_DOMAIN = 'messages'
 
+# Module-level variables
+_: Callable[[str], str]
+
 
 def get_locale_dir() -> str:
     """Return the absolute path to the locale directory."""
